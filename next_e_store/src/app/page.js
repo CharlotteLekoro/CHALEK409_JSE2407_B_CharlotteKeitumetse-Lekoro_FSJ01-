@@ -31,7 +31,7 @@ const HomePage = async () => {
                 src={product.images[0]} // Use the first image from the 'images' array
                 alt={product.name} 
                 style={{ 
-                  width: '50px', 
+                  width: '80px', 
                   height: '100px',
                   objectFit: 'cover', // Maintains aspect ratio and fills the container
                   borderRadius: '8px' // Optional: adds rounded corners to the image
