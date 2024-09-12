@@ -1,3 +1,5 @@
+'use client'; // Indicate that this is a client component
+
 import React from 'react';
 
 const LoadingSpinner = () => (
