@@ -1,6 +1,6 @@
 import React from 'react';
 
-// This is an async function that fetches data on the server-side
+// Fetch products including images
 const fetchProducts = async () => {
   try {
     const response = await fetch('https://next-ecommerce-api.vercel.app/products?limit=20', {
@@ -16,7 +16,7 @@ const fetchProducts = async () => {
   }
 };
 
-// React Server Component that fetches data
+// React Server Component
 const HomePage = async () => {
   const products = await fetchProducts();
 
@@ -25,9 +25,22 @@ const HomePage = async () => {
       <h1>First 20 Products</h1>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>
+          <li key={product.id} style={{ marginBottom: '20px', listStyleType: 'none' }}>
+            <div>
+              <img 
+                src={product.images[0]} // Use the first image from the 'images' array
+                alt={product.name} 
+                style={{ 
+                  width: '50px', 
+                  height: '100px',
+                  objectFit: 'cover', // Maintains aspect ratio and fills the container
+                  borderRadius: '8px' // Optional: adds rounded corners to the image
+                }} 
+              />
+            </div>
             <h2>{product.title}</h2>
             <p>${product.price}</p>
+            <p>{product.category}</p>
           </li>
         ))}
       </ul>
