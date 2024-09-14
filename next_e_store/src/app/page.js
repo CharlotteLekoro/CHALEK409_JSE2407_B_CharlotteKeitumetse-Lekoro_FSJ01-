@@ -1,51 +1,50 @@
-import React from 'react';
+import { notFound } from "next/navigation";
+import Header from "../components/Header";
+import ProductDetails from "../components/ProductDetails";
+import Link from "next/link";
 
-// Fetch products including images
-const fetchProducts = async () => {
-  try {
-    const response = await fetch('https://next-ecommerce-api.vercel.app/products?limit=20', {
-      next: { revalidate: 60 }, // Optional: set revalidation time (in seconds)
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  } catch (error) {
-    console.error('Error fetching products:', error);
-    return []; // Return an empty array in case of an error
+async function fetchProduct(id) {
+  const res = await fetch(
+    `https://next-ecommerce-api.vercel.app/products/${id}`
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch product");
   }
-};
 
-// React Server Component
-const HomePage = async () => {
-  const products = await fetchProducts();
+  return res.json();
+}
+
+export default async function ProductPage({ params }) {
+  const { id } = params;
+  let product;
+
+  try {
+    product = await fetchProduct(id);
+  } catch (error) {
+    return (
+      <p className="text-red-500">
+        Failed to load product. Please try again later.
+      </p>
+    );
+  }
+
+  if (!product) {
+    return notFound();
+  }
 
   return (
     <div>
-      <h1>First 20 Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id} style={{ marginBottom: '20px', listStyleType: 'none' }}>
-            <div>
-              <img 
-                src={product.images[0]} // Use the first image from the 'images' array
-                alt={product.name} 
-                style={{ 
-                  width: '80px', 
-                  height: '100px',
-                  objectFit: 'cover', // Maintains aspect ratio and fills the container
-                  borderRadius: '8px' // Optional: adds rounded corners to the image
-                }} 
-              />
-            </div>
-            <h2>{product.title}</h2>
-            <p>${product.price}</p>
-            <p>{product.category}</p>
-          </li>
-        ))}
-      </ul>
+      <Header />
+      <div className="max-w-5xl mx-auto p-8">
+        {/* Use Link directly without the <a> tag */}
+        <Link href="/products">
+          <div className="inline-block mb-6 px-4 py-2 bg-pink-400 text-white rounded-lg hover:bg-purple-400 transition-colors duration-300">
+            Back to Products
+          </div>
+        </Link>
+        <ProductDetails product={product} />
+      </div>
     </div>
   );
-};
-
-export default HomePage;
+}
