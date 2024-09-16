@@ -39,19 +39,19 @@ export function ImageGallery({ images }) {
         <img
           src={images[currentIndex]}
           alt={`Product Image: ${currentIndex + 1}`}
-          className="w-full h-full object-contain bg-gray-100 transition-transform duration-500"
+          className="w-full h-full object-contain bg-gray-300 transition-transform duration-500"
         />
         {images.length > 1 && (
           <>
             <button
               onClick={handlePrevClick}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-800 p-2 rounded-full hover:bg-opacity-75"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-700 p-2 rounded-full hover:bg-opacity-75"
             >
               ◀
             </button>
             <button
               onClick={handleNextClick}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-800 p-2 rounded-full hover:bg-opacity-75"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-700 p-2 rounded-full hover:bg-opacity-75"
             >
               ▶
             </button>
@@ -69,7 +69,7 @@ export function ImageGallery({ images }) {
               alt={`Gallery image ${index + 1}`}
               className={`w-24 h-24 object-contain shadow-lg cursor-pointer transition-transform duration-200 ${
                 currentIndex === index
-                  ? "scale-110 border-2 bg-gray-100 border-b-black"
+                  ? "scale-110 border-2 bg-gray-100 border-b-slate-700"
                   : ""
               }`}
               onClick={() => setCurrentIndex(index)}
@@ -117,19 +117,19 @@ export function SingleImageGallery({ images }) {
       <img
         src={images[currentIndex]}
         alt={`Product Image: ${currentIndex + 1}`}
-        className="w-full h-full object-contain bg-gray-100 transition-transform duration-500"
+        className="w-full h-full object-contain bg-gray-300 transition-transform duration-500"
       />
       {images.length > 1 && (
         <>
           <button
             onClick={handlePrevClick}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-800 p-2 rounded-full hover:bg-opacity-75"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-700 p-2 rounded-full hover:bg-opacity-75"
           >
             ◀
           </button>
           <button
             onClick={handleNextClick}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-800 p-2 rounded-full hover:bg-opacity-75"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-gray-700 p-2 rounded-full hover:bg-opacity-75"
           >
             ▶
           </button>
