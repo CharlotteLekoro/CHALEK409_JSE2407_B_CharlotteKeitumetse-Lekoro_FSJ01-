@@ -1398,6 +1398,18 @@ video {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
+.text-stone-200 {
+  --tw-text-opacity: 1;
+  color: rgb(231 229 228 / var(--tw-text-opacity));
+}
+.text-\[\#f43\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 68 51 / var(--tw-text-opacity));
+}
+.text-\[\#f43f5e\] {
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
 .opacity-20 {
   opacity: 0.2;
 }
