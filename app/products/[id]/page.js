@@ -60,19 +60,19 @@ export default async function ProductDetails({ params }) {
         {/* Product Details */}
         <div className="p-4 mt-6 md:mt-0 md:ml-8 flex-1">
           <h1 className="text-3xl font-bold mb-1">{product.title}</h1>
-          <p className="text-sm text-gray-700 mb-4 border-b-black">
+          <p className="text-sm text-gray-700 mb-4 border-b-slate-700">
             {product.brand}
           </p>
 
           <p className="text-base text-gray-700 mb-2">{product.description}</p>
-          <p className="text-lg text-gray-700 mb-2 border-b-black font-semibold">
+          <p className="text-lg text-gray-700 mb-2 border-b-slate-700 font-semibold">
             {product.category}
           </p>
           <div className="flex flex-wrap justify-between items-center mb-3">
             <button
               className={`text-sm font-medium ${
                 product.stock > 0
-                  ? "text-white bg-[#2d7942] px-2 py-1 rounded-md"
+                  ? "text-white bg-[#f43f5e]  px-2 py-1 rounded-md"
                   : "text-white bg-red-600 px-2 py-1 rounded-md"
               }`}
             >
@@ -81,7 +81,7 @@ export default async function ProductDetails({ params }) {
             <p className="text-xl font-bold">$ {product.price}</p>
           </div>
 
-          <p className="text-base text-black font-semibold mb-2">
+          <p className="text-base text-slate-600 font-semibold mb-2">
             Rating: {product.rating}
           </p>
 

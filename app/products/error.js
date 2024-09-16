@@ -36,11 +36,10 @@ export default function Error() {
           </svg>
 
           <h1 className="text-2xl font-bold text-gray-800 mb-2">
-            Oops, Something Went Wrong!
+        Something went wrong!
           </h1>
           <p className="text-gray-600 mb-6">
-            We encountered an error while fetching the product data. Please try
-            again later.
+           Please try again later.
           </p>
           <button
             onClick={() => window.location.reload()}

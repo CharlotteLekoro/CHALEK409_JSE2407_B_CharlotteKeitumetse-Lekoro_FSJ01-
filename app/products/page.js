@@ -53,7 +53,7 @@ export default async function Products({ searchParams }) {
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col max-h-[100rem] border border-gray-200 shadow-md bg-white rounded-3xl overflow-hidden hover:shadow-lg hover:scale-105 transition duration-500 relative"
+              className="flex flex-col max-h-[100rem] border border-gray-300 shadow-md bg-white rounded-3xl overflow-hidden hover:shadow-lg hover:scale-105 transition duration-500 relative"
             >
               {/* Product Image */}
               <SingleImageGallery alt={product.name} images={product.images} />
@@ -62,7 +62,7 @@ export default async function Products({ searchParams }) {
               <div className="flex-1 flex flex-col p-6">
                 <div className="flex-1">
                   <header className="mb-2 flex-2">
-                    <h2 className="text-lg line-clamp-2 font-extrabold leading-snug text-gray-700">
+                    <h2 className="text-lg line-clamp-2 font-extrabold leading-snug text-gray-600">
                       {product.title}
                     </h2>
                   </header>
@@ -81,14 +81,14 @@ export default async function Products({ searchParams }) {
                     {product.category}
                   </span>
 
-                  <p className="text-base font-bold text-[#2d7942] leading-snug">
+                  <p className="text-base font-bold text-[#f43f5e]  leading-snug">
                     ${product.price}
                   </p>
                 </div>
 
                 <Link
                   href={`/products/${product.id}`}
-                  className="flex text-black justify-center mt-3 bg-white px-3 py-2 text-sm font-semibold hover:text-[#2d7942]"
+                  className="flex text-slate-500 justify-center mt-3 bg-white px-3 py-2 text-sm font-semibold hover:text-[#f43f5e] "
                 >
                   <span>View Details →</span>
                 </Link>
@@ -118,14 +118,14 @@ function Pagination({ currentPage }) {
     <div className="flex justify-center items-center mt-8 space-x-2">
       {prevPage && (
         <Link href={`/products?page=${prevPage}`}>
-          <button className="px-4 py-2 bg-[#2d7942] text-white rounded-lg hover:bg-[#1d5931] transition-colors duration-300">
+          <button className="px-4 py-2 bg-[#f43f5e]  text-white rounded-lg hover:bg-[#fb7185]  transition-colors duration-300">
             Previous
           </button>
         </Link>
       )}
       <span className="text-lg">Page {currentPage}</span>
       <Link href={`/products?page=${nextPage}`}>
-        <button className="px-4 py-2 bg-[#2d7942] text-white rounded-lg hover:bg-[#1d5931] transition-colors duration-300">
+        <button className="px-4 py-2 bg-[#f43f5e]  text-white rounded-lg hover:bg-[#fb7185] transition-colors duration-300">
           Next
         </button>
       </Link>
