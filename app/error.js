@@ -35,15 +35,15 @@ export default function Error() {
             />
           </svg>
 
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">
-            Oops, Something Went Wrong!
+          <h1 className="text-2xl font-bold text-gray-700 mb-2">
+          Data fetching failed!
           </h1>
           <p className="text-gray-600 mb-6">
-            We encountered an error. Please try again later.
+            Please try again later.
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="px-4 py-2 bg-[#2d7942] text-white rounded hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-900"
+            className="px-4 py-2 bg-[#f43f5e]  text-white rounded hover:bg-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
           >
             Refresh Page
           </button>
