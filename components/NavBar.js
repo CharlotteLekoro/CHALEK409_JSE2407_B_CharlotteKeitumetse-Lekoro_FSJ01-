@@ -12,14 +12,14 @@ export default function NavBar() {
   };
 
   return (
-    <header className="bg-black text-white py-2 sticky top-0 z-50">
+    <header className="bg-slate-700 text-white py-2 sticky top-0 z-50">
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-2">
-            <Image src="/Logo2.png" alt="Logo" width={60} height={60} />
-            <h1 className="text-4xl text-[#2d7942] font-nerko font-bold">
-              Her Store
+            
+            <h1 className="text-4xl text-[#eab308] font-nerko font-bold">
+              Findings
             </h1>
           </div>
         </Link>
@@ -71,7 +71,7 @@ export default function NavBar() {
 
       {/* Mobile Dropdown Menu */}
       {isNavbarVisible && (
-        <div className="md:hidden bg-black">
+        <div className="md:hidden bg-slate-600">
           <ul className="flex flex-col items-center space-y-4 py-4">
             <li>
               <Link href="/" className="text-lg hover:underline">
