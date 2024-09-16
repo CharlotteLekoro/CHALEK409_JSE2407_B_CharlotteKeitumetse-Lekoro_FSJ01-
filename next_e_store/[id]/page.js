@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Header from "../components/Header";
+import Header from "./components/Header";
 import ProductDetails from "../components/ProductDetails";
 import Link from "next/link";
 
