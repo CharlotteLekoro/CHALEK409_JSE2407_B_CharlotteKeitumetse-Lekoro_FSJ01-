@@ -11,9 +11,9 @@ export default function NotFound() {
     <div className="max-w-5xl mx-auto p-8">
       <BackButton />
       <div className="flex flex-col justify-center items-center mt-24">
-        <div className="text-center bg-gray-100 shadow-lg rounded-lg p-8 max-w-md mx-auto">
+        <div className="text-center bg-gray-300 shadow-lg rounded-lg p-8 max-w-md mx-auto">
           <svg
-            className="w-16 h-16 mx-auto mb-4 text-red-500"
+            className="w-16 h-16 mx-auto mb-4 text-rose-500"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
