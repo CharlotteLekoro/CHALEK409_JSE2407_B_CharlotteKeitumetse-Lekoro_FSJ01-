@@ -8,7 +8,7 @@ export default function Home() {
       
     >
       {/* Overlay for better contrast */}
-      <div className="absolute inset-0 bg-slate-700 opacity-20"></div>
+      <div className="absolute inset-0 bg-slate-700refactorogm opacity-20"></div>
 
       {/* Text content */}
       <div className="relative z-10 text-left px-4 max-w-5xl">
